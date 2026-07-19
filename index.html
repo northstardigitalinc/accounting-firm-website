@@ -2097,21 +2097,23 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
 </div><!-- /services -->
 
 <script>
-function go(id){
+function go(id, anchor){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
   document.querySelectorAll('.nl').forEach(l=>l.classList.remove('on'));
   document.getElementById('page-'+id).classList.add('on');
   const nl=document.getElementById('nl-'+id);
   if(nl)nl.classList.add('on');
-  window.scrollTo({top:0,behavior:'instant'});
+  if(anchor){
+    // Wait two animation frames so the page is painted before scrolling
+    requestAnimationFrame(()=>requestAnimationFrame(()=>{
+      const el=document.getElementById(anchor);
+      if(el)el.scrollIntoView({behavior:'smooth'});
+    }));
+  } else {
+    window.scrollTo({top:0,behavior:'instant'});
+  }
 }
-function goSvc(anchor){
-  go('svcs');
-  setTimeout(()=>{
-    const el=document.getElementById(anchor);
-    if(el)el.scrollIntoView({behavior:'smooth'});
-  },60);
-}
+function goSvc(anchor){ go('svcs', anchor); }
 function toggleSvc(row){
   const isOpen=row.classList.contains('open');
   document.querySelectorAll('.svc-row.open').forEach(r=>r.classList.remove('open'));
