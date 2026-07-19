@@ -268,27 +268,27 @@ svg{display:block}
 }
 .svc-list{border-top:1px solid var(--rim)}
 .svc-row{
-  display:grid;
-  grid-template-columns:56px 1fr 2fr auto;
-  gap:0 40px;align-items:start;
-  padding:36px 0;
   border-bottom:1px solid var(--rim);
-  cursor:default;
+  cursor:pointer;
+}
+.svc-trigger{
+  display:grid;
+  grid-template-columns:56px 1fr auto;
+  gap:0 40px;align-items:center;
+  padding:32px 0;
   transition:background .15s;
 }
-.svc-row:hover{background:rgba(18,130,162,.04);margin:0 -48px;padding:36px 48px}
+.svc-trigger:hover{background:rgba(18,130,162,.04);margin:0 -48px;padding:32px 48px}
 .svc-num{
   font-size:13px;font-weight:400;
   color:var(--teal);
   font-variant-numeric:tabular-nums;
   letter-spacing:.04em;
-  padding-top:3px;
   font-family:var(--serif);
 }
 .svc-name{
   font-size:1.0625rem;font-weight:500;
   color:var(--hi);letter-spacing:-.01em;
-  padding-top:2px;
 }
 .svc-cat{
   display:inline-block;
@@ -297,19 +297,42 @@ svg{display:block}
   color:var(--teal);
   border:1px solid rgba(18,130,162,.3);
   padding:2px 8px;border-radius:var(--pill);
-  margin-top:8px;
-}
-.svc-desc{
-  font-size:.9375rem;font-weight:300;
-  color:var(--lo);line-height:1.75;
-  padding-top:2px;
+  margin-top:7px;
 }
 .svc-arr{
-  padding-top:5px;
-  transition:transform .15s,color .15s;
+  transition:transform .22s,color .15s;
   color:var(--edge);
+  line-height:0;
 }
-.svc-row:hover .svc-arr{transform:translateX(4px);color:var(--teal)}
+.svc-row.open .svc-arr{transform:rotate(90deg);color:var(--teal)}
+.svc-trigger:hover .svc-arr{color:var(--teal)}
+.svc-drop{
+  display:none;
+  padding:0 0 32px 96px;
+}
+.svc-row.open .svc-drop{display:block}
+.svc-drop-text{
+  font-size:.9375rem;font-weight:300;
+  color:var(--lo);line-height:1.78;
+  max-width:640px;
+}
+.svc-drop-bullets{
+  list-style:none;
+  margin-top:16px;
+  display:flex;flex-direction:column;gap:8px;
+}
+.svc-drop-bullets li{
+  font-size:.875rem;font-weight:300;
+  color:var(--dim);line-height:1.6;
+  padding-left:16px;
+  position:relative;
+}
+.svc-drop-bullets li::before{
+  content:'';
+  position:absolute;left:0;top:9px;
+  width:5px;height:1px;
+  background:var(--teal);
+}
 
 /* ─────────────────────────────────────────────────────────
    DISPLAY STAT — one editorial number at scale
@@ -631,16 +654,16 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
   /* Services */
   .services{padding:72px 0}
   .sec-header{margin-bottom:40px}
-  .svc-row{
-    grid-template-columns:36px 1fr;
-    gap:0 14px;padding:28px 0;
+  .svc-trigger{
+    grid-template-columns:36px 1fr auto;
+    gap:0 14px;padding:24px 0;
   }
-  .svc-row:hover{
+  .svc-trigger:hover{
     background:rgba(18,130,162,.04);
-    margin:0 -20px;padding:28px 20px;
+    margin:0 -20px;padding:24px 20px;
   }
-  .svc-desc,.svc-arr{display:none}
   .svc-name{font-size:1rem}
+  .svc-drop{padding:0 0 24px 50px}
 
   /* Display stat */
   .display-stat{padding:56px 0}
@@ -820,83 +843,144 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
     </div>
   </section>
 
-  <!-- Services — numbered rows, no cards -->
+  <!-- Services — accordion rows -->
   <section class="services">
     <div class="w">
       <div class="sec-header">
         <div>
           <div class="sec-eyebrow">What We Do</div>
-          <h2 class="sec-h">Full-spectrum financial services, built around your business.</h2>
+          <h2 class="sec-h">Financial services built around your business.</h2>
         </div>
-        <p class="sec-p">We don't offer a menu of disconnected services. Every engagement is built around your business's specific stage, structure, and goals.</p>
+        <p class="sec-p">Every engagement is shaped around your stage, structure, and goals. Click any service to learn more.</p>
       </div>
       <div class="svc-list">
-        <div class="svc-row">
-          <div class="svc-num">01</div>
-          <div>
-            <div class="svc-name">Fractional CFO Services</div>
-            <div class="svc-cat">Flagship</div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">01</div>
+            <div>
+              <div class="svc-name">Fractional CFO Services</div>
+              <div class="svc-cat">Flagship</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           </div>
-          <div class="svc-desc">Senior financial leadership embedded in your team, managing cash, guiding strategy, and making decisions that drive the business forward. No full-time overhead.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-        <div class="svc-row">
-          <div class="svc-num">02</div>
-          <div>
-            <div class="svc-name">Financial Planning &amp; Investment</div>
-            <div class="svc-cat">Planning</div>
-          </div>
-          <div class="svc-desc">$19M in client investments, managed with the same rigour as institutional money. Business and personal financial planning, fully integrated.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-        <div class="svc-row">
-          <div class="svc-num">03</div>
-          <div>
-            <div class="svc-name">Tax Strategy &amp; Optimization</div>
-            <div class="svc-cat">Tax</div>
-          </div>
-          <div class="svc-desc">Proactive tax planning that reduces liability year-round. Entity structure, deductibility, and regulatory changes addressed before they create exposure.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="svc-drop">
+            <p class="svc-drop-text">Senior financial leadership embedded in your team, without the full-time cost. We sit in your planning meetings, manage cash flow, and make decisions alongside you.</p>
+            <ul class="svc-drop-bullets">
+              <li>Cash flow forecasting and working capital management</li>
+              <li>Board and investor reporting</li>
+              <li>Budget planning and variance analysis</li>
+              <li>Pricing, margin, and unit economics review</li>
+              <li>Finance team hiring and process build-out</li>
+            </ul>
           </div>
         </div>
-        <div class="svc-row">
-          <div class="svc-num">04</div>
-          <div>
-            <div class="svc-name">Bookkeeping &amp; Controller Services</div>
-            <div class="svc-cat">Foundation</div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">02</div>
+            <div>
+              <div class="svc-name">Financial Planning &amp; Investment</div>
+              <div class="svc-cat">Planning</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
           </div>
-          <div class="svc-desc">Clean, accurate books. Monthly reconciliation, management accounts, and financial statements that tell you exactly where the business stands.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-        <div class="svc-row">
-          <div class="svc-num">05</div>
-          <div>
-            <div class="svc-name">Business Advisory</div>
-            <div class="svc-cat">Advisory</div>
-          </div>
-          <div class="svc-desc">Strategic guidance through acquisitions, fundraising, restructuring, and ownership transitions. Numbers with narrative, and a clear recommendation.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </div>
-        </div>
-        <div class="svc-row">
-          <div class="svc-num">06</div>
-          <div>
-            <div class="svc-name">Audit Readiness &amp; Compliance</div>
-            <div class="svc-cat">Compliance</div>
-          </div>
-          <div class="svc-desc">Internal controls, compliance frameworks, and audit preparation for regulated industries. We prepare you before scrutiny arrives, not after it does.</div>
-          <div class="svc-arr">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <div class="svc-drop">
+            <p class="svc-drop-text">$19M in client investments under active management. We connect your business performance to your personal financial picture so every decision serves both.</p>
+            <ul class="svc-drop-bullets">
+              <li>Investment portfolio strategy and management</li>
+              <li>Retirement and wealth accumulation planning</li>
+              <li>Business and personal planning integrated</li>
+              <li>Risk profiling and asset allocation</li>
+              <li>Exit and ownership transition planning</li>
+            </ul>
           </div>
         </div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">03</div>
+            <div>
+              <div class="svc-name">Tax Strategy &amp; Optimization</div>
+              <div class="svc-cat">Tax</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="svc-drop">
+            <p class="svc-drop-text">Proactive tax planning that reduces liability year-round, not just at filing time. We address structure, deductibility, and regulatory changes before they create exposure.</p>
+            <ul class="svc-drop-bullets">
+              <li>Entity structure review and optimization</li>
+              <li>Year-round tax minimization strategy</li>
+              <li>Owner compensation and distribution planning</li>
+              <li>Corporate and personal tax filing</li>
+              <li>CRA audit support and representation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">04</div>
+            <div>
+              <div class="svc-name">Bookkeeping &amp; Controller Services</div>
+              <div class="svc-cat">Foundation</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="svc-drop">
+            <p class="svc-drop-text">Clean, accurate books every month. Financial statements you can trust and act on, prepared on time without chasing your accountant.</p>
+            <ul class="svc-drop-bullets">
+              <li>Monthly bookkeeping and bank reconciliation</li>
+              <li>Management accounts and P&amp;L reporting</li>
+              <li>Accounts payable and receivable oversight</li>
+              <li>Payroll processing and remittances</li>
+              <li>Year-end close and financial statement preparation</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">05</div>
+            <div>
+              <div class="svc-name">Business Advisory</div>
+              <div class="svc-cat">Advisory</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="svc-drop">
+            <p class="svc-drop-text">Strategic guidance through acquisitions, fundraising, restructuring, and ownership transitions. Numbers with narrative and a clear recommendation.</p>
+            <ul class="svc-drop-bullets">
+              <li>Acquisition due diligence and deal structuring</li>
+              <li>Fundraising preparation and investor materials</li>
+              <li>Business valuation and readiness assessment</li>
+              <li>Restructuring and cost reduction planning</li>
+              <li>Succession and ownership transition advisory</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="svc-row" onclick="toggleSvc(this)">
+          <div class="svc-trigger">
+            <div class="svc-num">06</div>
+            <div>
+              <div class="svc-name">Audit Readiness &amp; Compliance</div>
+              <div class="svc-cat">Compliance</div>
+            </div>
+            <div class="svc-arr"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          </div>
+          <div class="svc-drop">
+            <p class="svc-drop-text">Internal controls, compliance frameworks, and audit preparation for regulated industries. We prepare you before scrutiny arrives, not after it does.</p>
+            <ul class="svc-drop-bullets">
+              <li>Internal control design and documentation</li>
+              <li>Pre-audit financial review and gap analysis</li>
+              <li>Regulatory compliance monitoring</li>
+              <li>Auditor liaison and support during fieldwork</li>
+              <li>Post-audit remediation planning</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
@@ -1461,6 +1545,11 @@ function go(id){
   const nl=document.getElementById('nl-'+id);
   if(nl)nl.classList.add('on');
   window.scrollTo({top:0,behavior:'instant'});
+}
+function toggleSvc(row){
+  const isOpen=row.classList.contains('open');
+  document.querySelectorAll('.svc-row.open').forEach(r=>r.classList.remove('open'));
+  if(!isOpen)row.classList.add('open');
 }
 const mobBtn=document.getElementById('mobBtn');
 const mobMenu=document.getElementById('mobMenu');
