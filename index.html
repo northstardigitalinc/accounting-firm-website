@@ -759,6 +759,63 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
   .ss-cell:nth-child(n+2){border-top:1px solid var(--rim)}
 }
 
+/* ─── SERVICES PAGE ──────────────────────────────────────── */
+.sp-hero{padding:80px 0 72px;border-bottom:1px solid var(--rim)}
+.sp-hero .ph-ey{display:inline-flex;align-items:center;gap:12px;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);margin-bottom:28px}
+.sp-hero .ph-ey::before{content:'';width:32px;height:1px;background:var(--teal);flex-shrink:0}
+.sp-hero-h{font-family:var(--serif);font-size:clamp(2.5rem,4.8vw,4.75rem);font-weight:400;line-height:1.06;color:var(--hi);text-wrap:balance;max-width:760px;margin-bottom:20px}
+.sp-hero-sub{font-size:1.0625rem;font-weight:300;color:var(--lo);line-height:1.75;max-width:600px}
+
+.sp-toc{padding:48px 0;border-bottom:1px solid var(--rim);background:var(--depth)}
+.sp-toc-inner{display:flex;gap:8px;flex-wrap:wrap}
+.sp-toc-lnk{font-size:13px;font-weight:400;color:var(--lo);padding:7px 16px;border:1px solid var(--rim);border-radius:var(--pill);transition:border-color .14s,color .14s;cursor:pointer}
+.sp-toc-lnk:hover{border-color:var(--teal);color:var(--hi)}
+
+.sp-service{padding:80px 0;border-bottom:1px solid var(--rim)}
+.sp-service:last-child{border-bottom:none}
+.sp-svc-grid{display:grid;grid-template-columns:280px 1fr;gap:64px}
+.sp-aside{position:relative}
+.sp-svc-num{font-family:var(--serif);font-size:.8125rem;color:var(--teal);font-variant-numeric:tabular-nums;letter-spacing:.06em;margin-bottom:16px}
+.sp-svc-name{font-family:var(--serif);font-size:clamp(1.5rem,2.4vw,2.25rem);font-weight:400;color:var(--hi);line-height:1.15;margin-bottom:12px}
+.sp-svc-cat{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--teal);border:1px solid rgba(18,130,162,.3);padding:3px 10px;border-radius:var(--pill);margin-bottom:24px}
+.sp-svc-summary{font-size:.9375rem;font-weight:300;color:var(--lo);line-height:1.78;margin-bottom:28px}
+.sp-tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.sp-tag{font-size:11px;font-weight:500;color:var(--dim);background:var(--panel);padding:4px 10px;border-radius:2px}
+
+.sp-main{}
+.sp-block{margin-bottom:44px}
+.sp-block:last-child{margin-bottom:0}
+.sp-block-title{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid var(--rim)}
+.sp-block-body{font-size:.9375rem;font-weight:300;color:var(--lo);line-height:1.78}
+.sp-block-body p{margin-bottom:12px}
+.sp-block-body p:last-child{margin-bottom:0}
+.sp-ul{list-style:none;display:flex;flex-direction:column;gap:9px;margin-top:4px}
+.sp-ul li{font-size:.9375rem;font-weight:300;color:var(--lo);line-height:1.6;padding-left:18px;position:relative}
+.sp-ul li::before{content:'';position:absolute;left:0;top:10px;width:6px;height:1px;background:var(--teal)}
+
+.sp-forms{margin-top:8px;display:flex;flex-direction:column;gap:10px}
+.sp-form-row{display:grid;grid-template-columns:120px 1fr;gap:12px 20px;align-items:start;padding:14px 0;border-bottom:1px solid rgba(3,64,120,.5)}
+.sp-form-row:last-child{border-bottom:none}
+.sp-form-id{font-size:12px;font-weight:600;color:var(--teal);font-variant-numeric:tabular-nums;letter-spacing:.04em;padding-top:1px}
+.sp-form-desc{font-size:.875rem;font-weight:300;color:var(--lo);line-height:1.6}
+.sp-form-name{font-size:.9375rem;font-weight:500;color:var(--body);margin-bottom:2px}
+
+.sp-notice{background:var(--depth);border:1px solid var(--rim);border-left:3px solid var(--teal);padding:18px 20px;border-radius:var(--r-sm);margin-top:16px}
+.sp-notice-text{font-size:.8125rem;font-weight:300;color:var(--dim);line-height:1.7}
+.sp-notice-text strong{color:var(--lo);font-weight:500}
+
+.sp-disclaimer{padding:56px 0;border-top:1px solid var(--rim);background:var(--depth)}
+.sp-disclaimer-text{font-size:.8125rem;font-weight:300;color:var(--dim);line-height:1.8;max-width:900px}
+
+@media(max-width:1024px){.sp-svc-grid{grid-template-columns:220px 1fr;gap:44px}}
+@media(max-width:768px){
+  .sp-hero{padding:56px 0 56px}
+  .sp-toc{padding:32px 0}
+  .sp-service{padding:56px 0}
+  .sp-svc-grid{grid-template-columns:1fr;gap:32px}
+  .sp-form-row{grid-template-columns:100px 1fr}
+}
+
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{transition-duration:.01ms!important}
 }
@@ -773,7 +830,7 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
         <a class="nl on" id="nl-home" href="#" onclick="go('home');return false">Overview</a>
         <a class="nl" id="nl-lend" href="#" onclick="go('lend');return false">For Lenders</a>
         <a class="nl" id="nl-hlth" href="#" onclick="go('hlth');return false">For Healthcare</a>
-        <a class="nl" href="#">About</a>
+        <a class="nl" id="nl-svcs" href="#" onclick="go('svcs');return false">Services</a>
         <a class="nl" href="#">Contact</a>
       </div>
       <div class="nav-right">
@@ -789,7 +846,7 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
     <a class="mob-lnk" href="#" onclick="go('home');closeMob();return false">Overview</a>
     <a class="mob-lnk" href="#" onclick="go('lend');closeMob();return false">For Lenders</a>
     <a class="mob-lnk" href="#" onclick="go('hlth');closeMob();return false">For Healthcare</a>
-    <a class="mob-lnk" href="#">About</a>
+    <a class="mob-lnk" href="#" onclick="go('svcs');closeMob();return false">Services</a>
     <a class="mob-lnk" href="#">Contact</a>
     <div class="mob-cta-wrap">
       <a class="nav-cta" href="https://calendly.com/northstardigital" target="_blank" rel="noopener" style="display:inline-block">Schedule a Free Call</a>
@@ -1536,6 +1593,507 @@ footer{border-top:1px solid var(--rim);padding:64px 0 40px}
   </footer>
 
 </div><!-- /healthcare -->
+
+<!-- ════════════════════════════════════════════════════════
+     SERVICES PAGE
+════════════════════════════════════════════════════════ -->
+<div class="page" id="page-svcs">
+
+  <section class="sp-hero">
+    <div class="w">
+      <div class="ph-ey">Our Services</div>
+      <h1 class="sp-hero-h">Every service we offer, fully explained.</h1>
+      <p class="sp-hero-sub">Full detail on scope, deliverables, regulatory requirements, required forms, and what to expect from each engagement. No fine print surprises.</p>
+    </div>
+  </section>
+
+  <!-- Table of contents -->
+  <div class="sp-toc">
+    <div class="w">
+      <div class="sp-toc-inner">
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-cfo').scrollIntoView({behavior:'smooth'})">01 &nbsp; Fractional CFO</span>
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-fp').scrollIntoView({behavior:'smooth'})">02 &nbsp; Financial Planning</span>
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-tax').scrollIntoView({behavior:'smooth'})">03 &nbsp; Tax Strategy</span>
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-bk').scrollIntoView({behavior:'smooth'})">04 &nbsp; Bookkeeping</span>
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-adv').scrollIntoView({behavior:'smooth'})">05 &nbsp; Business Advisory</span>
+        <span class="sp-toc-lnk" onclick="document.getElementById('svc-aud').scrollIntoView({behavior:'smooth'})">06 &nbsp; Audit &amp; Compliance</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ─── 01 Fractional CFO ─────────────────────────────── -->
+  <section class="sp-service" id="svc-cfo">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">01</div>
+          <div class="sp-svc-name">Fractional CFO Services</div>
+          <div class="sp-svc-cat">Flagship</div>
+          <p class="sp-svc-summary">Senior financial leadership embedded in your business on a part-time basis. We act as your CFO without the full-time salary, reporting directly to founders or the board.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">Cash Management</span>
+            <span class="sp-tag">Forecasting</span>
+            <span class="sp-tag">Reporting</span>
+            <span class="sp-tag">Strategy</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Monthly cash flow forecasting and 13-week rolling cash model</li>
+              <li>Annual budget preparation and ongoing variance tracking</li>
+              <li>Board and investor reporting packages (monthly and quarterly)</li>
+              <li>KPI dashboard design, maintenance, and narrative commentary</li>
+              <li>Pricing analysis, unit economics review, and margin optimization</li>
+              <li>Scenario modelling for hiring plans, expansions, and capital decisions</li>
+              <li>Banking relationship management and debt covenant monitoring</li>
+              <li>Finance team hiring support and onboarding oversight</li>
+              <li>Participation in leadership and board meetings as required</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory and Professional Requirements</div>
+            <div class="sp-block-body">
+              <p>Fractional CFO advisory is not a regulated activity under provincial securities law in Canada, provided the advisor does not provide advice on specific securities or act as a portfolio manager. Our advisors hold CPA designations (CPA Canada) and are bound by the CPA Code of Professional Conduct, including requirements around independence, objectivity, confidentiality, and competence.</p>
+              <p>All engagements are governed by a written Engagement Letter that sets out scope, fees, confidentiality obligations, and limitations of liability in accordance with CPA Canada standards. Where our work touches financial reporting, we apply standards consistent with ASPE (Accounting Standards for Private Enterprises) or IFRS as applicable.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Documentation at Engagement Start</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">Engagement Letter</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Signed CFO Services Agreement</div>Defines scope, deliverables, fee structure, confidentiality, and termination terms. Mandatory before work begins.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">CRA T1013</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Authorize a Representative (Individual)</div>Required if we need to communicate with CRA on your behalf, access your tax account, or review prior filings.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">CRA RC59</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Business Consent for Online Access</div>Required for corporate clients to grant us access to the CRA My Business Account portal.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">NDA</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Mutual Non-Disclosure Agreement</div>Executed before any financial data, business plans, or sensitive materials are shared.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Deliverables and Reporting Standards</div>
+            <div class="sp-block-body">
+              <p>All financial models and reports are prepared in accordance with management accounting best practices. Board packages follow a standardized format including executive summary, financial statements, KPI scorecard, and forward-looking commentary. Variance reports include explanations for all material items (typically defined as variances exceeding 10% or $10,000, whichever is lower).</p>
+            </div>
+          </div>
+          <div class="sp-notice">
+            <p class="sp-notice-text"><strong>Note:</strong> Fractional CFO services are advisory in nature and do not constitute the preparation of audited financial statements. Where audited statements are required by lenders, regulators, or investors, we will coordinate with a licensed public accounting firm on your behalf.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 02 Financial Planning & Investment ───────────────── -->
+  <section class="sp-service" id="svc-fp">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">02</div>
+          <div class="sp-svc-name">Financial Planning &amp; Investment</div>
+          <div class="sp-svc-cat">Planning</div>
+          <p class="sp-svc-summary">$19M in client assets under active management. Comprehensive financial planning that connects your business performance to your personal wealth, retirement, and legacy goals.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">Investments</span>
+            <span class="sp-tag">Retirement</span>
+            <span class="sp-tag">Wealth Planning</span>
+            <span class="sp-tag">KYC</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Comprehensive financial plan covering income, assets, liabilities, and goals</li>
+              <li>Investment portfolio construction, management, and periodic rebalancing</li>
+              <li>Registered account planning: RRSP, TFSA, RESP, RDSP, FHSA</li>
+              <li>Corporate investment account strategy for business owners</li>
+              <li>Retirement income projection and decumulation planning</li>
+              <li>Life insurance needs analysis and product coordination</li>
+              <li>Estate planning integration and beneficiary structure review</li>
+              <li>Annual plan review and updates triggered by life or business changes</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory Requirements</div>
+            <div class="sp-block-body">
+              <p>Investment advisory and portfolio management services in Canada are regulated under provincial securities legislation. In Ontario, advisors must be registered with the Ontario Securities Commission (OSC) under the Securities Act, R.S.O. 1990, c. S.5. Registration categories applicable to our services include Portfolio Manager (PM) and/or Exempt Market Dealer (EMD), depending on the nature of products recommended.</p>
+              <p>We comply with National Instrument 31-103 (Registration Requirements, Exemptions and Ongoing Registrant Obligations), which governs know-your-client (KYC), know-your-product (KYP), and suitability obligations. All investment recommendations are made only after completing a full KYC assessment and determining suitability for the client's specific financial situation, risk tolerance, and investment objectives.</p>
+              <p>We are also subject to FINTRAC (Financial Transactions and Reports Analysis Centre of Canada) reporting obligations under the Proceeds of Crime (Money Laundering) and Terrorist Financing Act. This requires identity verification at account opening and ongoing transaction monitoring.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Forms and Documentation</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">KYC Form</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Know Your Client Questionnaire</div>Mandatory under NI 31-103. Captures financial situation, investment objectives, risk tolerance, time horizon, and investment knowledge. Reviewed and updated annually or upon material change.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Account Agreement</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Client Account Opening Agreement</div>Establishes the legal relationship, account type, fee structure, and terms of service. Required before any account is opened or funds are invested.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Risk Profile</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Investment Risk Tolerance Questionnaire</div>Scored assessment used to assign an investment risk category (Conservative, Moderate, Balanced, Growth, Aggressive). Required for suitability determination.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">FINTRAC ID</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Identity Verification Record</div>Government-issued photo ID required at account opening. Required under the Proceeds of Crime (Money Laundering) and Terrorist Financing Act. We accept passport, driver's licence, or permanent resident card.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">IPS</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Investment Policy Statement</div>Documents agreed-upon investment objectives, asset allocation targets, rebalancing parameters, and restrictions. Signed by client and advisor.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Beneficiary Forms</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Registered Account Beneficiary Designations</div>Required for RRSP, TFSA, and RESP accounts. Designates who receives account assets on death, outside of the estate.</div>
+              </div>
+            </div>
+            <div class="sp-notice" style="margin-top:20px">
+              <p class="sp-notice-text"><strong>Ongoing obligation:</strong> Clients are required to notify us of any material change in their financial situation, employment, marital status, or investment objectives. KYC information is reviewed no less than annually. Failure to update information may affect the suitability of ongoing investment recommendations.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 03 Tax Strategy ──────────────────────────────────── -->
+  <section class="sp-service" id="svc-tax">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">03</div>
+          <div class="sp-svc-name">Tax Strategy &amp; Optimization</div>
+          <div class="sp-svc-cat">Tax</div>
+          <p class="sp-svc-summary">Proactive tax planning throughout the year, not just at filing. We reduce liability through structure, timing, and strategy, then prepare and file returns accurately and on time.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">Corporate Tax</span>
+            <span class="sp-tag">Personal Tax</span>
+            <span class="sp-tag">CRA</span>
+            <span class="sp-tag">Planning</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Year-round tax planning strategy and advisory</li>
+              <li>Corporate tax return preparation and filing (T2)</li>
+              <li>Personal tax return preparation and filing (T1)</li>
+              <li>GST/HST return preparation and filing</li>
+              <li>Payroll remittance compliance (T4, T4A, ROE)</li>
+              <li>Entity structure review for tax efficiency (Inc. vs. sole proprietor vs. partnership)</li>
+              <li>Owner compensation optimization: salary vs. dividends vs. hybrid</li>
+              <li>Capital gains and loss planning</li>
+              <li>CRA audit support, objections, and appeals representation</li>
+              <li>Cross-border tax considerations for US or international activity</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory Requirements</div>
+            <div class="sp-block-body">
+              <p>Tax preparation and filing services in Canada are governed by the Income Tax Act (R.S.C., 1985, c. 1 (5th Supp.)) and the Excise Tax Act for GST/HST. Our CPAs are licensed under CPA Canada and are authorized to prepare and file returns and to represent clients before the Canada Revenue Agency.</p>
+              <p>To act as your authorized representative with the CRA, we require a signed authorization form (T1013 for individuals, RC59 for corporations). Without this authorization, we cannot access your tax account, request information, or correspond with CRA on your behalf.</p>
+              <p>All tax positions taken in returns are supported by the Income Tax Act, CRA administrative positions, or documented professional judgement. We do not take aggressive or unsupported tax positions. Where a position carries risk, we will clearly communicate it to you in writing before filing.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Forms</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">CRA T1013</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Authorize or Cancel a Representative (Personal)</div>Grants us authority to access your personal CRA My Account and act on your behalf. Required for all personal tax clients.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">CRA RC59</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Business Consent for Online Access</div>Grants us authority to access your corporate CRA My Business Account. Required for all corporate tax clients.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">T183 / T183CORP</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Information Return for Electronic Filing</div>Authorizes us to electronically file your T1 or T2 return. Must be signed by the taxpayer before we transmit any return to CRA via EFILE or NETFILE.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">T2200</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Declaration of Conditions of Employment</div>Required if claiming employment expenses on a T1 return. Must be completed and signed by the employer.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">RC4288</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Request for Taxpayer Relief</div>Used to request cancellation or waiver of interest and penalties in situations of financial hardship or CRA error. Submitted where applicable.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Key Filing Deadlines</div>
+            <ul class="sp-ul">
+              <li>T1 personal return: April 30 (June 15 for self-employed; balance owing still due April 30)</li>
+              <li>T2 corporate return: 6 months after fiscal year-end</li>
+              <li>GST/HST annual return: 3 months after fiscal year-end (if annually elected)</li>
+              <li>T4 / T4A slips: February 28</li>
+              <li>Instalment payments: March 15, June 15, September 15, December 15 (personal)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 04 Bookkeeping & Controller ─────────────────────── -->
+  <section class="sp-service" id="svc-bk">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">04</div>
+          <div class="sp-svc-name">Bookkeeping &amp; Controller Services</div>
+          <div class="sp-svc-cat">Foundation</div>
+          <p class="sp-svc-summary">Clean, accurate financial records every month. Timely management accounts and statements that give you a reliable picture of the business, not a surprise at year-end.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">Reconciliation</span>
+            <span class="sp-tag">Payroll</span>
+            <span class="sp-tag">Reporting</span>
+            <span class="sp-tag">GAAP</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Monthly transaction coding, categorization, and reconciliation</li>
+              <li>Bank and credit card reconciliation against source statements</li>
+              <li>Accounts payable processing and vendor payment scheduling</li>
+              <li>Accounts receivable tracking and aged receivables reporting</li>
+              <li>Payroll processing and CRA remittances (source deductions, EI, CPP)</li>
+              <li>Monthly management accounts: P&amp;L, balance sheet, cash flow statement</li>
+              <li>Year-end working paper preparation for external accountants or auditors</li>
+              <li>Chart of accounts setup and maintenance</li>
+              <li>GST/HST filing support and remittance tracking</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory and Compliance Requirements</div>
+            <div class="sp-block-body">
+              <p>All bookkeeping is performed in accordance with the Accounting Standards for Private Enterprises (ASPE) as issued by the Accounting Standards Board (AcSB), or IFRS for applicable clients. Financial records are maintained in a manner consistent with the Income Tax Act's record-keeping requirements (Section 230), which requires businesses to keep records for a minimum of six years from the end of the tax year they relate to.</p>
+              <p>Payroll processing complies with the Canada Pension Plan Act, the Employment Insurance Act, and applicable provincial employment standards legislation. We process payroll remittances in accordance with CRA's Payroll Deductions Online Calculator (PDOC) standards and file T4 and T4A information returns annually by the February 28 deadline.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Documentation</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">Engagement Letter</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Bookkeeping Services Agreement</div>Defines monthly deliverables, turnaround times, client responsibilities for providing source documents, and fee structure.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">CRA RC59</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Business Consent for Online Access</div>Required to access payroll and HST account information through CRA My Business Account.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">PD27</div>
+                <div class="sp-form-desc"><div class="sp-form-name">10% Temporary Wage Subsidy Self-Identification</div>Required for eligible employers to self-identify participation in wage subsidy programs and report the amount to CRA on their T4 summary.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">TD1 / TD1ON</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Personal Tax Credits Return</div>Completed by each employee at hire to determine federal and provincial source deduction amounts. Retained on file per CRA record-keeping requirements.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sp-notice">
+            <p class="sp-notice-text"><strong>Client responsibility:</strong> Clients are required to provide all source documents (invoices, receipts, bank statements, payroll records) by the 5th business day of the following month. Delays in document submission will result in delays to monthly reporting. We are not responsible for penalties arising from late filings caused by late document delivery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 05 Business Advisory ─────────────────────────────── -->
+  <section class="sp-service" id="svc-adv">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">05</div>
+          <div class="sp-svc-name">Business Advisory</div>
+          <div class="sp-svc-cat">Advisory</div>
+          <p class="sp-svc-summary">Strategic financial guidance through the moments that define your business: acquisitions, capital raises, restructuring, and ownership transitions. We provide the analysis, then a clear recommendation.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">M&amp;A</span>
+            <span class="sp-tag">Valuation</span>
+            <span class="sp-tag">Fundraising</span>
+            <span class="sp-tag">Exit Planning</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Business valuation using DCF, market multiples, and asset-based approaches</li>
+              <li>Buy-side and sell-side due diligence support</li>
+              <li>Acquisition financial modelling and deal structure analysis</li>
+              <li>Investor deck preparation and financial model review</li>
+              <li>Debt financing preparation: lender packages, covenant modelling</li>
+              <li>Restructuring analysis and creditor negotiation support</li>
+              <li>Shareholder agreement review for financial provisions</li>
+              <li>Ownership succession planning and buy-sell structure design</li>
+              <li>Post-acquisition integration support for finance function</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory Requirements</div>
+            <div class="sp-block-body">
+              <p>General business advisory does not require securities registration in Canada provided we do not act as a dealer or underwriter in a securities transaction, manage investment portfolios, or provide advice on specific securities. Our advisory services are structured accordingly.</p>
+              <p>Where a transaction involves the issuance of securities (e.g. equity financing), we will refer to or coordinate with a registered exempt market dealer or investment dealer as required by applicable securities law. Valuations prepared for tax purposes (e.g. s.86 reorganizations, estate freezes, or shareholder buyouts) are conducted in accordance with CRA valuation guidelines and the Canadian Institute of Chartered Business Valuators (CICBV) standards where applicable.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Documentation</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">Engagement Letter</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Advisory Services Agreement</div>Project-scoped letter defining deliverables, timeline, fee structure (fixed or hourly), and limitations of advice. Required before any advisory work begins.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">NDA</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Mutual Non-Disclosure Agreement</div>Executed before any confidential business, financial, or transaction information is shared. Covers all parties involved in the engagement.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Data Room Access</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Document Access Authorization</div>Written authorization from the relevant party granting access to financial records, contracts, and operational data required for due diligence or valuation.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sp-notice">
+            <p class="sp-notice-text"><strong>Scope of advice:</strong> Business advisory opinions are based on information provided by the client and publicly available data. We do not provide legal advice. All transaction documentation, including purchase agreements, shareholder agreements, and financing contracts, should be reviewed by qualified legal counsel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── 06 Audit Readiness & Compliance ─────────────────── -->
+  <section class="sp-service" id="svc-aud">
+    <div class="w">
+      <div class="sp-svc-grid">
+        <div class="sp-aside">
+          <div class="sp-svc-num">06</div>
+          <div class="sp-svc-name">Audit Readiness &amp; Compliance</div>
+          <div class="sp-svc-cat">Compliance</div>
+          <p class="sp-svc-summary">Internal controls, compliance frameworks, and audit preparation for regulated industries. We prepare your organization before scrutiny arrives, so audits run cleanly and on schedule.</p>
+          <div class="sp-tag-row">
+            <span class="sp-tag">Internal Controls</span>
+            <span class="sp-tag">Audit Prep</span>
+            <span class="sp-tag">Compliance</span>
+            <span class="sp-tag">Regulatory</span>
+          </div>
+        </div>
+        <div class="sp-main">
+          <div class="sp-block">
+            <div class="sp-block-title">What Is Included</div>
+            <ul class="sp-ul">
+              <li>Internal control design, documentation, and testing</li>
+              <li>Pre-audit financial review and gap analysis against auditor expectations</li>
+              <li>Preparation of audit support working papers and schedules</li>
+              <li>Auditor liaison and coordination throughout the audit fieldwork period</li>
+              <li>Management letter response preparation and remediation planning</li>
+              <li>Ongoing regulatory compliance monitoring and reporting calendar management</li>
+              <li>Policy and procedure documentation for financial controls</li>
+              <li>Fraud risk assessment and segregation of duties review</li>
+              <li>Post-audit remediation tracking and implementation support</li>
+            </ul>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Regulatory Requirements</div>
+            <div class="sp-block-body">
+              <p>Audits of financial statements in Canada must be conducted by a public accountant licensed under the applicable provincial public accounting act (e.g., the Public Accounting Act, 2004 in Ontario). We do not perform statutory audits. Our role is to prepare your organization and act as liaison, with the audit itself conducted by a licensed public accounting firm.</p>
+              <p>Our compliance services are tailored to the regulatory requirements applicable to your industry. For federally regulated financial institutions, this includes OSFI guidelines and the Bank Act or Trust and Loan Companies Act. For healthcare organizations, this includes provincial health funding accountability requirements and applicable college regulations. For publicly reporting issuers, this includes securities law financial reporting requirements under NI 52-109 and NI 52-110.</p>
+              <p>All internal control frameworks are designed in accordance with COSO (Committee of Sponsoring Organizations of the Treadway Commission) Internal Control Integrated Framework, which is the standard recognized by Canadian auditors and regulators.</p>
+            </div>
+          </div>
+          <div class="sp-block">
+            <div class="sp-block-title">Required Documentation</div>
+            <div class="sp-forms">
+              <div class="sp-form-row">
+                <div class="sp-form-id">Engagement Letter</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Audit Readiness Services Agreement</div>Defines scope of readiness work, relationship with the external auditor, deliverable timing, and fees. Required before access to any financial records.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Auditor Authorization</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Client Authorization to Communicate with Auditors</div>Written authorization permitting us to communicate directly with your external auditors, respond to auditor queries, and share financial data on your behalf.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Management Rep Letter</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Management Representation Letter</div>Required by external auditors from management at audit completion. We prepare the draft for management review and signature. Cannot be signed by us on behalf of management.</div>
+              </div>
+              <div class="sp-form-row">
+                <div class="sp-form-id">Control Narratives</div>
+                <div class="sp-form-desc"><div class="sp-form-name">Process and Control Documentation</div>Detailed written descriptions of key financial processes and the controls that govern them. Prepared by us, reviewed and approved by management, and provided to auditors as supporting documentation.</div>
+              </div>
+            </div>
+          </div>
+          <div class="sp-notice">
+            <p class="sp-notice-text"><strong>Important distinction:</strong> Audit readiness and compliance advisory are separate from the statutory audit function. We act as your preparation and coordination team. The external auditor remains independent of us and reports directly to management, the audit committee, or the board. We do not sign audit opinions.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disclaimer -->
+  <div class="sp-disclaimer">
+    <div class="w">
+      <p class="sp-disclaimer-text">The information on this page describes our services in general terms and is provided for informational purposes only. It does not constitute legal, tax, investment, or accounting advice. Regulatory requirements vary by province, industry, and individual circumstances. Specific obligations applicable to your situation will be confirmed in your engagement letter and initial consultation. All services are subject to applicable professional standards, including the CPA Canada Code of Professional Conduct. Investment advisory services are subject to registration requirements under applicable provincial securities legislation. This page was last reviewed July 2025.</p>
+    </div>
+  </div>
+
+  <!-- Footer (shared structure) -->
+  <footer>
+    <div class="w">
+      <div class="foot-grid">
+        <div>
+          <div class="foot-logo">Company<span>.</span>Name</div>
+          <p class="foot-desc">Fractional CFO services, financial planning, tax strategy, and accounting advisory for growing businesses, with deep specialisation in lending and healthcare.</p>
+        </div>
+        <div>
+          <div class="foot-hdg">Services</div>
+          <div class="foot-links">
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('svcs');window.scrollTo(0,0)">Fractional CFO</span>
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('svcs');window.scrollTo(0,0)">Financial Planning</span>
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('svcs');window.scrollTo(0,0)">Tax Strategy</span>
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('svcs');window.scrollTo(0,0)">Bookkeeping</span>
+          </div>
+        </div>
+        <div>
+          <div class="foot-hdg">Specialisations</div>
+          <div class="foot-links">
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('lend');window.scrollTo(0,0)">Lending Institutions</span>
+            <span class="foot-lnk" style="cursor:pointer" onclick="go('hlth');window.scrollTo(0,0)">Healthcare Practices</span>
+          </div>
+        </div>
+        <div>
+          <div class="foot-hdg">Contact</div>
+          <div class="foot-links">
+            <a class="foot-lnk" href="tel:+16473393039">+1 (647) 339-3039</a>
+            <a class="foot-lnk" href="https://calendly.com/northstardigital" target="_blank" rel="noopener">Schedule a Free Call</a>
+          </div>
+        </div>
+      </div>
+      <div class="foot-bot">
+        <span class="foot-copy">&copy; 2025 Company Name. All rights reserved. &nbsp;&middot;&nbsp; CPA Licensed &nbsp;&middot;&nbsp; AICPA Member</span>
+        <span class="foot-copy">Privacy &nbsp;&middot;&nbsp; Terms &nbsp;&middot;&nbsp; Disclosures</span>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /services -->
 
 <script>
 function go(id){
